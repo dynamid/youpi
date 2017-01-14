@@ -1,0 +1,24 @@
+[nains] #raspberry pis
+
+gimli   # youpi-a405-650
+durin   # youpi-a405-662  ## camera
+balin   # youpi-a405-700
+bifur   # youpi-a405-670
+bofur   # youpi-a405-671  ## camera
+bombur  # youpi-a405-674
+dori    # youpi-a405-677
+dwalin  # youpi-a405-683
+fili    # youpi-a405-684
+gloin   # youpi-a405-689
+kili    # youpi-a405-693  ## IR camera
+nori    # youpi-a405-661  ## IR camera
+oin     # youpi-a405-696
+ori     # youpi-a405-694  ## camera 
+thrain  # youpi-a405-711
+
+[elfes]
+
+legolas    # youpi-a405-656 # banana pi undeployed
+galadriel  # youpi-a405-662 # banana pi undeployed
+
+
