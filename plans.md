@@ -1,2 +1,2 @@
 *Plan de la salle*
-<img src="https://raw.githubusercontent.com/dynamid/youpi/master/images/plan.png" width="100%" height="704">
+<img src="http://vectr.com/ocrozo/g1H1KqYDN8.svg?width=640&height=704&select=g1H1KqYDN8page0" width="100%" height="704">
