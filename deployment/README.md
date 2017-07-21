@@ -2,7 +2,7 @@
 
 ## Linux Users
 
-**Requirements:** kpartx
+**Requirements:** kpartx, unzip
 
 **Simply run:**
 
