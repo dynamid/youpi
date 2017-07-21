@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 if [ "$(uname)" == "Darwin" ]; then
     echo "Dear mac user,"
     echo ""
@@ -10,8 +11,19 @@ if [ "$(uname)" == "Darwin" ]; then
     echo "and next made dd by your own (with raw disk to speedup):"
     echo "     sudo dd bs=1m if=raspbian.img of=/dev/rdisk<disk# from diskutil> conv=sync"
     echo ""
-    echo "May the force be with you!"
-    echo "  (Hope to see you again)"
+    echo "May the force be with you! (Hope to see you again)"
+    echo ""
+    echo ""
+    echo ""
+    echo "These seem to be some SD cards: "
+    for i in /dev/disk?;  do
+        SD=`diskutil info $i | grep "SD Card Reader"`
+        if [ "$SD" ]; then
+            rd=`sed 's/\/dev\/disk/\/dev\/rdisk/' <<< "$i"`
+            echo "  $i --->  sudo dd bs=1m if=raspbian.img of=${rd} conv=sync";
+        fi
+    done
+
     exit;
 elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
     echo "Win 32 ... you're fired!"
