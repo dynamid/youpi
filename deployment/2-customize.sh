@@ -21,7 +21,7 @@ echo "Customizing the raspbian..."
 touch $TEMPDIR/boot/ssh
 
 #on set le mot de passe de l'utilisateur pi
-sed -i -e 's/pi:.*:/pi:$6$PkGWLnD55eT$csr6p5sBmJc0GeACvSUhLHMv\/BTqZTScIckmWEHy3lTfv6fSOb\/VquUpnH0DQP95ELXZl1bhfWujciQj0VKev0:/' $TEMPDIR/etc/shadow
+sed -i -e 's/pi:[^:.]*:/pi:$6$PkGWLnD55eT$csr6p5sBmJc0GeACvSUhLHMv\/BTqZTScIckmWEHy3lTfv6fSOb\/VquUpnH0DQP95ELXZl1bhfWujciQj0VKev0:/' $TEMPDIR/etc/shadow
 
 #on set la clé ssh pour pi
 mkdir $TEMPDIR/home/pi/.ssh
