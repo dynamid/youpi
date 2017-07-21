@@ -17,7 +17,18 @@ mount /dev/mapper/$LOOPDEVBOOT $TEMPDIR/boot
 echo "Loop devices mounted in $TEMPDIR"
 
 echo "Customizing the raspbian..."
+#on active le ssh
 touch $TEMPDIR/boot/ssh
+
+#on set le mot de passe de l'utilisateur pi
+sed -i -e 's/pi:.*:/pi:$6$PkGWLnD55eT$csr6p5sBmJc0GeACvSUhLHMv\/BTqZTScIckmWEHy3lTfv6fSOb\/VquUpnH0DQP95ELXZl1bhfWujciQj0VKev0:/' $TEMPDIR/etc/shadow
+
+#on set la clé ssh pour pi
+mkdir $TEMPDIR/home/pi/.ssh
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpHXJmHky7Gh1Z4cZI3itodZC1Wn2olvfSmNAubhmQ+t29VriAZJh9AnIfyhT15u2vDP33Mr5dlKj36XOlMu7hJQFd33c6+dchkWXaO6pnBX/0KCdnTc0wYDJeuoOY8AkuOaIdGH+SxvrbTKSalLAThFDXkutMuMJLlXHrlXATZ705Tjv/WiQoYq+Fh4bb0T56nltaCN5jW26h/rC0DmELtoTEmbffPjpcOE5LT1L8uCWaLiycUKCc6WGubhHD1yzvn5ZULAQix2/vQuYMrYrH/a+1th+d+7HkJ8Bod1gzmvKv6FOxx2SGhWiucm6UzVCfOr5yAc1iVzE3g8FUN5bt root@khamul" > $TEMPDIR/home/pi/.ssh/authorized_keys
+chmod 600 $TEMPDIR/home/pi/.ssh/authorized_keys
+chown 1000:1000 $TEMPDIR/home/pi/.ssh/authorized_keys
+
 
 echo "Cleaning..."
 

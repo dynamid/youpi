@@ -5,13 +5,13 @@ if [ "$EUID" -ne 0 ]
 		exit
 fi
 
-OFDEV="/dev/mapper/mmcblk0"
+OFDEV="/dev/mmcblk0"
 
 if [ ! -z $1 ]
 	then OFDEV=$1
 fi	
 
 echo "Flashing sdcard on $OFDEV"
-dd bs=1M if=raspbian.img of=$OFDEV conv=fsync status=progress
+dd if=raspbian.img of=$OFDEV status=progress
 sync
 echo "done !"
