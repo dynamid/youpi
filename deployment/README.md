@@ -16,7 +16,7 @@
 
 **Requirements:** linux host (like Khamul) with sudoer rights
 
-** *Simply* run:**
+**Such as Linux users:**
 * Steps 1 & 2 : Go through Khamul or a RPi, since your fucky OS doesn't support EXT2FS.
 * Steps 3 :
   * Get the name of the SD card's device :
